@@ -39,7 +39,7 @@ class BasePyTorchRegressor(BasePyTorchModel):
             unfiltered_df, dk.training_features_list, training_filter=False
         )
         dk.data_dictionary["prediction_features"] = filtered_df
-
+        
         dk.data_dictionary["prediction_features"], outliers, _ = dk.feature_pipeline.transform(
             dk.data_dictionary["prediction_features"], outlier_check=True
         )
